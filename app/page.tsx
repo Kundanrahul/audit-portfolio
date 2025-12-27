@@ -13,12 +13,13 @@ import {
 } from "@/sanity/lib/queries"
 
 export default async function Home() {
-  const findings = await client.fetch(findingsQuery)
+  const findings = await client.fetch(findingsQuery, {}, { next: { revalidate: 60 } })
   const previewFindings = findings.slice(0, 5)
 
-  const protocols = await client.fetch(protocolShowcaseQuery)
-  const midHeading = await client.fetch(midHeadingQuery)
-  const metrics = await client.fetch(metricsQuery)
+
+  const protocols = await client.fetch(protocolShowcaseQuery, {}, { next: { revalidate: 60 } })
+  const midHeading = await client.fetch(midHeadingQuery, {}, { next: { revalidate: 60 } })
+  const metrics = await client.fetch(metricsQuery, {}, { next: { revalidate: 60 } })
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-900 text-slate-100 font-hacker">
