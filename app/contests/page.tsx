@@ -3,7 +3,11 @@ import { contestsWithFindingsQuery } from "@/sanity/lib/queries"
 import ContestsList from "./ContestsList"
 
 export default async function ContestsPage() {
-  const contests = await client.fetch(contestsWithFindingsQuery)
+    const contests = await client.fetch(
+       contestsWithFindingsQuery,
+       {},
+       { next: { revalidate: 60 } }
+      )
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-slate-900 text-slate-100 font-hacker">
