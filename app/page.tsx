@@ -87,15 +87,14 @@ export default async function Home() {
     <span className="text-sm sm:text-base font-bold">View Contests</span>
   </Link>
 
-  <a
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=rahulkundan60@gmail.com&su=Opportunities%20with%20rox_k%20(DeFi%20Audit%20or%20Job)&body=Hello%20rox_k,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20an%20opportunity%20with%20you%20regarding%20a%20DeFi%20audit%20or%20a%20potential%20job%20role.%0D%0A%0D%0AThanks!"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="border border-capri text-capri font-semibold px-6 py-3 rounded-lg hover:bg-capri hover:text-slate-900 transition shadow-md animate-pulse flex flex-col items-center justify-center min-h-17.5"
-  >
-    <span className="text-sm sm:text-base font-bold">Hire Me</span>
-    <span className="text-[8px] sm:text-[11px] font-normal text-slate-200">for job/an audit</span>
-  </a>
+<a
+  href="mailto:rahulkundan60@gmail.com?subject=Opportunities%20with%20rox_k%20(DeFi%20Audit%20or%20Job)&body=Hello%20rox_k,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20an%20opportunity%20with%20you%20regarding%20a%20DeFi%20audit%20or%20a%20potential%20job%20role.%0D%0A%0D%0AThanks!"
+  className="border border-capri text-capri font-semibold px-6 py-3 rounded-lg hover:bg-capri hover:text-slate-900 transition shadow-md animate-pulse flex flex-col items-center justify-center min-h-17.5"
+>
+  <span className="text-sm sm:text-base font-bold">Hire Me</span>
+  <span className="text-[8px] sm:text-[11px] font-normal text-slate-200">for job/an audit</span>
+</a>
+
 </div>
 
         </section>
