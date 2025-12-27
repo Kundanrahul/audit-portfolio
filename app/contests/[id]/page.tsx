@@ -77,7 +77,7 @@ export default async function ContestDetail({
                             rel="noopener noreferrer"
                             className="text-capri underline"
                           >
-                            PoC
+                            Report
                           </a>
                         ) : (
                           "-"
