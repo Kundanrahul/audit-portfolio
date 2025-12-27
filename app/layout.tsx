@@ -39,7 +39,7 @@ export default function RootLayout({
   <div className="mx-auto max-w-6xl px-4 py-3 sm:py-4 lg:py-6 flex items-center justify-between">
     {/* Left-aligned copyright */}
     <p className="text-[10px] sm:text-xs lg:text-sm font-semibold font-heading text-slate-400 tracking-wide text-left">
-      © {new Date().getFullYear()}
+      © {new Date().getFullYear()} rox_k
     </p>
 
     {/* Centered LinkedIn link */}
