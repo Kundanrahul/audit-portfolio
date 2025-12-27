@@ -63,7 +63,7 @@ export default function Navbar() {
 
       {/* Mobile dropdown ->horizontal bar */}
       <div
-        className={`md:hidden fixed top-16 left-0 w-full bg-slate-900 border-b border-slate-800 flex justify-around z-40 transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed top-20 left-0 w-full bg-slate-900 border-b border-slate-800 flex justify-around z-40 transition-all duration-300 ease-in-out ${
           isOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"
