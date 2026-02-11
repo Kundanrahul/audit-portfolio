@@ -38,7 +38,7 @@ export default function Navbar() {
        height={30}
        className="rounded-full sm:w-7 sm:h-7 lg:w-8 lg:h-8"
       />
-      rox_k
+      0xrox
     </Link>
 
           {/* Desktop nav */}
