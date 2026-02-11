@@ -14,7 +14,7 @@ const hackerFont = Share_Tech_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "rox_k | DeFi SR & Dev",
+  title: "0xrox | DeFi SR & Dev",
   description:
     "Transparent, reproducible smart contract audits with actionable findings and proofs of concept.",
   icons: { icon: "/rox.png" },
