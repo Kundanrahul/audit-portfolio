@@ -51,7 +51,7 @@ export default function RootLayout({
         className="inline-flex items-center gap-2 text-capri font-heading text-[10px] sm:text-xs lg:text-sm transition-colors hover:text-slate-100 hover:underline"
       >
      <SiLinkedin className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
-        Hire Me for Full Stack DeFi roles
+        
       </a>
     </div>
 
