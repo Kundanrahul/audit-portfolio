@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { client } from "@/sanity/lib/client"
 import Signature from "./assets/signature.png"
-import BlockchainAnimation from "./components/BlockchainAnimation"
+import BlockchainAnimation, { ProtocolScroller } from "./components/BlockchainAnimation"
 import { StarIcon } from "@heroicons/react/24/solid"
 import { LockClosedIcon } from "@heroicons/react/24/solid"
 import {
@@ -66,7 +66,7 @@ export default async function Home() {
             </div>
           </div>
           <h2 className="mt-2 text-sm sm:text-base lg:text-lg font-light text-slate-400">
-            DeFi Security Researcher
+            Web3 Security Researcher
           </h2>
           <p className="mt-6 text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed">
             Transparent, reproducible, and impact‑driven smart contract audits. Explore findings,
@@ -129,31 +129,12 @@ export default async function Home() {
     Protocols Secured
   </h2>
 
-  <div className="relative overflow-hidden w-full animate-fadeIn">
+  <div className="relative w-full">
     {/* Gradient fades */}
-    <div className="pointer-events-none absolute left-0 top-0 h-full w-16 bg-linear-to-r from-slate-900 to-transparent z-10"></div>
-    <div className="pointer-events-none absolute right-0 top-0 h-full w-16 bg-linear-to-l from-slate-900 to-transparent z-10"></div>
+    <div className="pointer-events-none absolute left-0 top-0 h-full w-10 sm:w-16 bg-linear-to-r from-slate-900 to-transparent z-10"></div>
+    <div className="pointer-events-none absolute right-0 top-0 h-full w-10 sm:w-16 bg-linear-to-l from-slate-900 to-transparent z-10"></div>
 
-    {/* Scrolling content */}
-    <div className="flex gap-6 sm:gap-8 py-3 animate-scroll">
-      {protocols.map((p: any, idx: number) => (
-        <div
-          key={p._id}
-          style={{ ["--i" as any]: idx }}
-          className="flex flex-col items-center min-w-18 sm:min-w-24"
-        >
-          <Image
-            src={p.logoUrl}
-            alt={p.name}
-            width={64}
-            height={64}
-            loading="lazy"
-            className="rounded-full border border-slate-700"
-          />
-          <span className="mt-2 text-slate-300 text-xs sm:text-sm">{p.name}</span>
-        </div>
-      ))}
-    </div>
+    <ProtocolScroller protocols={protocols} />
   </div>
 </section>
         {/* Mid Heading */}
