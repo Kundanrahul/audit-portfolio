@@ -1,136 +1,201 @@
 @import "tailwindcss";
 
-/*heading font */
+/* heading font */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
-/* Light mode defaults */
+/* Theme */
 :root {
   --background: #0f172a;
   --foreground: #ededed;
 }
 
-/* Tailwind theme tokens inline */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Custom palette */
   --color-capri: #00BFFF;
   --color-slate-900: #0f172a;
   --color-slate-800: #1e293b;
   --color-slate-700: #334155;
 
-  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-hacker: var(--font-hacker);
   --font-heading: 'Orbitron', sans-serif;
 }
 
-/* Global body styles */
+/* Base */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-hacker), var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* === Animations === */
-@keyframes glow {
-  0%, 100% { text-shadow: 0 0 1px #00BFFF, 0 0 2px #00BFFF; }
-  50% { text-shadow: 0 0 2px #00BFFF, 0 0 4px #00BFFF; }
-}
+/* ========================= */
+/* TRUE INFINITE SCROLL   */
+/* ========================= */
 
-@keyframes fadeIn {
-  0%   { opacity: 0; transform: translateY(10px); }
-  40%  { opacity: 0.3; transform: translateY(5px); }
-  70%  { opacity: 0.7; transform: translateY(2px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeOut {
-  0%   { opacity: 1; }
-  30%  { opacity: 0.7; }
-  60%  { opacity: 0.3; }
-  100% { opacity: 0; }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-}
-
-/* Auto-scroll for protocol showcase (scalable) */
-@keyframes itemScroll {
-  0%   { transform: translateX(100vw); opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { transform: translateX(-100%); opacity: 0; }
-}
-
-
-.animate-scroll {
-  position: relative;
+.scroll-wrapper {
   overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+
+  /* no gap here — critical for perfect loop */
+  gap: 0;
+
+  animation: scrollMove 18s linear infinite;
+
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.scroll-half {
   display: flex;
   gap: 2rem;
-  padding: 0.5rem 0;
+  flex-shrink: 0;
+  padding-right: 2rem;
 }
 
-.animate-scroll > * {
-  opacity: 0;
-  animation-fill-mode: forwards;
+@media (max-width: 640px) {
+  .scroll-track {
+    animation-duration: 12s;
+  }
+
+  .scroll-half {
+    gap: 1.4rem;
+    padding-right: 1.4rem;
+  }
+}
+
+@keyframes scrollMove {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* cards */
+.protocol-card {
+  flex: 0 0 auto;
+  min-width: 120px;
+  text-align: center;
+  opacity: 0.9;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.protocol-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.35s ease;
+}
+
+.protocol-logo {
+  transition: transform 0.35s ease;
+}
+
+/* Hover state */
+.protocol-card:hover {
+  opacity: 1;
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.protocol-card:hover .protocol-logo {
+  transform: scale(0.7) rotate(2deg);
+}
+
+/* logo */
+.protocol-logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  border-radius: 9999px;
+  border: 1px solid #334155;
+  object-fit: cover;
   will-change: transform;
-  animation: itemScroll 12s linear infinite backwards;
-  animation-delay: calc(var(--i) * 1.2s); /* stagger based on index */
+  image-rendering: auto;
 }
 
-.animate-scroll:hover > * {
-  animation-play-state: paused;
+/* name */
+.protocol-name {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #cbd5f5;
+  line-height: 1.2;
 }
 
-/* Utility classes */
-.animate-glow {
-  animation: glow 3s infinite;
+@media (min-width: 640px) {
+  .protocol-card {
+    min-width: 130px;
+  }
+  .protocol-logo {
+    width: 60px;
+    height: 60px;
+  }
+  .protocol-name {
+    font-size: 13px;
+  }
 }
 
-.animate-pulse {
-  animation: pulse 3s infinite;
+@media (min-width: 1024px) {
+  .protocol-card {
+    min-width: 150px;
+  }
+  .protocol-logo {
+    width: 64px;
+    height: 64px;
+  }
+  .protocol-name {
+    font-size: 14px;
+  }
+}
+/* ========================= */
+/* Animations */
+/* ========================= */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
 
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 .animate-fadeIn {
-  animation: fadeIn 1.5s ease-in-out forwards;
+  animation: fadeIn 1.2s ease-in-out forwards;
 }
 
-.animate-fadeOut {
-  animation: fadeOut 1.5s ease-in-out forwards;
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
-/* Smooth up/down floating */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.animate-pulse {
+  animation: pulse 3s infinite;
 }
 
-/* respect reduced motion */
+/* reduce motion */
 @media (prefers-reduced-motion: reduce) {
-  .animate-float {
+  .animate-float,
+  .scroll-track {
     animation: none;
   }
 }
 
-/* Custom background utility */
+/* background */
 .bg-app {
   background: var(--background);
 }
-
-
-
-
-
-
-
-
