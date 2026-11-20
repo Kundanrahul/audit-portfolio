@@ -58,8 +58,7 @@ export default function RootLayout({
     {/* Right-aligned Developer Website link */}
     <div className="flex justify-end">
       <a
-        href="https://0xrox.xyz/"
-        target="_blank"
+        href="/"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 text-capri font-heading text-[10px] sm:text-xs lg:text-sm transition-colors hover:text-slate-100 hover:underline"
       >
