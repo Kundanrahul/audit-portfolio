@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 export default function FindingsList({ findings }: { findings: any[] }) {
-  const [visibleCount, setVisibleCount] = useState(5)
+  const [visibleCount, setVisibleCount] = useState(10)
   const [severityFilter, setSeverityFilter] = useState<string>("All")
 
   const filteredFindings =
@@ -40,7 +40,7 @@ export default function FindingsList({ findings }: { findings: any[] }) {
     value={severityFilter}
     onChange={(e) => {
       setSeverityFilter(e.target.value)
-      setVisibleCount(5)
+      setVisibleCount(10)
     }}
     className="bg-slate-800 text-slate-200 text-[10px] sm:text-xs lg:text-sm px-1 py-0.5 sm:px-1.5 sm:py-1 rounded-md border border-slate-700 focus:outline-none focus:ring-2 focus:ring-capri hover:border-capri transition w-auto sm:w-28 lg:w-32"
   >
@@ -114,15 +114,15 @@ export default function FindingsList({ findings }: { findings: any[] }) {
         <div className="flex justify-center gap-6 mt-10">
           {hasMore && (
             <button
-              onClick={() => setVisibleCount(visibleCount + 5)}
+              onClick={() => setVisibleCount(visibleCount + 10)}
               className="bg-capri text-slate-900 font-semibold px-6 py-3 rounded-lg hover:bg-slate-100 hover:text-slate-900 transition shadow-md animate-pulse"
             >
               View More
             </button>
           )}
-          {visibleCount > 5 && (
+          {visibleCount > 10 && (
             <button
-              onClick={() => setVisibleCount(5)}
+              onClick={() => setVisibleCount(10)}
               className="border border-capri text-capri font-semibold px-6 py-3 rounded-lg hover:bg-capri hover:text-slate-900 transition shadow-md animate-pulse"
             >
               Collapse Back
