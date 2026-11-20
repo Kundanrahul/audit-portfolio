@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Share_Tech_Mono } from "next/font/google"
 import { GlobeAltIcon } from "@heroicons/react/24/outline"
 import { SiLinkedin } from "react-icons/si"
@@ -55,17 +56,16 @@ export default function RootLayout({
       </a>
     </div>
 
-    {/* Right-aligned Developer Website link */}
-    <div className="flex justify-end">
-      <a
-        href="/"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-capri font-heading text-[10px] sm:text-xs lg:text-sm transition-colors hover:text-slate-100 hover:underline"
-      >
-        <GlobeAltIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
-        Home
-      </a>
-    </div>
+{/* Right-aligned Home link */}
+<div className="flex justify-end">
+  <Link
+    href="/"
+    className="inline-flex items-center gap-2 text-capri font-heading text-[10px] sm:text-xs lg:text-sm transition-colors hover:text-slate-100 hover:underline"
+  >
+    <GlobeAltIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+    Home
+  </Link>
+</div>
   </div>
 </footer>
       </body>
