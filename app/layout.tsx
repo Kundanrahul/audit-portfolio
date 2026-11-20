@@ -15,7 +15,7 @@ const hackerFont = Share_Tech_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "0xrox | web3 security researcher | protocol engineeer",
+  title: "0xrox | Web3 Security Researcher | Protocol Engineer",
   description:
     "Transparent, reproducible smart contract audits with actionable findings and proofs of concept.",
   icons: { icon: "/rox.png" },
