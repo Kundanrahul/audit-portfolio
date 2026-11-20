@@ -31,13 +31,13 @@ export default function Navbar() {
              border border-slate-600 rounded-md bg-slate-800 
              hover:bg-slate-700 hover:text-capri hover:scale-105 transition-transform"
       >
-     <Image
-       src={roxAvatar}
-       alt="rox_k avatar"
-       width={30}   // smaller avatar for mobile
-       height={30}
-       className="rounded-full sm:w-7 sm:h-7 lg:w-8 lg:h-8"
-      />
+<Image
+  src={roxAvatar}
+  alt="rox_k avatar"
+  width={32}
+  height={32}
+  className="w-7 h-7 sm:w-7 sm:h-7 lg:w-8 lg:h-8 rounded-full object-cover shrink-0"
+/>
       0xrox
     </Link>
 
