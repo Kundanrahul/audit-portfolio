@@ -58,13 +58,13 @@ export default function RootLayout({
     {/* Right-aligned Developer Website link */}
     <div className="flex justify-end">
       <a
-        href="https://pf-rk.vercel.app/"
+        href="https://0xrox.xyz/"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-2 text-capri font-heading text-[10px] sm:text-xs lg:text-sm transition-colors hover:text-slate-100 hover:underline"
       >
         <GlobeAltIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
-        Dev Website
+        
       </a>
     </div>
   </div>
